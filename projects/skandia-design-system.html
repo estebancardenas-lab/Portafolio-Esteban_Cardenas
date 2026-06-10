@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caso de Estudio: Sistema de Diseño | Esteban Cárdenas</title>
+  <meta name="description" content="Caso de estudio de Design Systems y Gobernanza en Skandia: Consistencia visual y eficiencia front-end por Esteban Cárdenas.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script>
+    // Immediately apply dark theme class if preferred to prevent flickering
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-theme');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Menu Overlay for Mobile -->
+  <div class="menu-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo-block" id="nav-logo" aria-label="Esteban Cárdenas - Inicio">
+        <svg width="144" height="23" viewBox="0 0 144 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <path d="M0 19.8881V2.7041H10.944V6.2321H3.732V16.3601H11.064V19.8881H0ZM2.112 12.8561V9.7601H10.536V12.8561H2.112Z" fill="currentColor"/>
+          <path d="M18.0529 20.2961C17.1729 20.2961 16.4049 20.2081 15.7489 20.0321C15.1009 19.8561 14.5169 19.6001 13.9969 19.2641C13.4849 18.9281 13.0569 18.5601 12.7129 18.1601C12.3769 17.7521 12.2089 17.5481 12.2089 17.5481L14.4529 15.7001C14.4529 15.7001 14.5729 15.8441 14.8129 16.1321C15.0609 16.4121 15.3489 16.6601 15.6769 16.8761C16.0049 17.0921 16.3729 17.2561 16.7809 17.3681C17.1889 17.4801 17.6609 17.5361 18.1969 17.5361C18.7889 17.5361 19.2529 17.4361 19.5889 17.2361C19.9249 17.0361 20.0929 16.7481 20.0929 16.3721C20.0929 16.0441 19.9369 15.7881 19.6249 15.6041C19.3209 15.4121 18.5449 15.1721 17.2969 14.8841C15.7129 14.5241 14.5649 14.0241 13.8529 13.3841C13.1489 12.7441 12.7969 11.9361 12.7969 10.9601C12.7969 9.7921 13.2849 8.8601 14.2609 8.1641C15.2449 7.4681 16.4849 7.1201 17.9809 7.1201C18.7329 7.1201 19.4129 7.1961 20.0209 7.3481C20.6369 7.4921 21.1769 7.7001 21.6409 7.9721C22.1129 8.2441 22.5129 8.5441 22.8409 8.8721C23.1689 9.1921 23.3329 9.3521 23.3329 9.3521L21.1969 11.2001C21.1969 11.2001 21.0889 11.1001 20.8729 10.9001C20.6649 10.6921 20.4049 10.5041 20.0929 10.3361C19.7809 10.1681 19.4409 10.0481 19.0729 9.9761C18.7129 9.8961 18.3489 9.8561 17.9809 9.8561C17.4609 9.8561 17.0409 9.9521 16.7209 10.1441C16.4089 10.3361 16.2529 10.5761 16.2529 10.8641C16.2529 11.1601 16.4009 11.4041 16.6969 11.5961C17.0009 11.7881 17.7849 12.0321 19.0489 12.3281C20.6329 12.6881 21.7849 13.1841 22.5049 13.8161C23.2249 14.4481 23.5849 15.2441 23.5849 16.2041C23.5849 17.4281 23.0809 18.4161 22.0729 19.1681C21.0649 19.9201 19.7249 20.2961 18.0529 20.2961Z" fill="currentColor"/>
+          <path d="M29.9616 20.2961C28.6256 20.2961 27.5816 19.9481 26.8296 19.2521C26.0856 18.5481 25.7136 17.4921 25.7136 16.0841V4.1921H29.4576V15.5921C29.4576 16.1761 29.5816 16.6121 29.8296 16.9001C30.0776 17.1881 30.4416 17.3321 30.9216 17.3321C31.0816 17.3321 31.2416 17.3201 31.4016 17.2961C31.5696 17.2641 31.7776 17.2081 32.0256 17.1281C32.2816 17.0401 32.4096 16.9961 32.4096 16.9961V19.8881C32.4096 19.8881 32.2496 19.9321 31.9296 20.0201C31.6176 20.1161 31.3096 20.1841 31.0056 20.2241C30.7096 20.2721 30.3616 20.2961 29.9616 20.2961ZM23.8776 10.3841V7.5401H32.3856V10.3841H23.8776Z" fill="currentColor"/>
+          <path d="M39.651 20.2961C37.691 20.2961 36.111 19.6801 34.911 18.4481C33.719 17.2081 33.123 15.6321 33.123 13.7201C33.123 11.8161 33.723 10.2401 34.923 8.9921C36.131 7.7441 37.687 7.1201 39.591 7.1201C41.391 7.1201 42.875 7.6841 44.043 8.8121C45.211 9.9401 45.795 11.3841 45.795 13.1441V14.4401H34.923V12.5561H42.339C42.283 11.8121 42.011 11.2081 41.523 10.7441C41.035 10.2721 40.391 10.0361 39.591 10.0361C38.711 10.0361 38.003 10.3521 37.467 10.9841C36.939 11.6081 36.675 12.4801 36.675 13.6001C36.675 14.8001 36.983 15.7481 37.599 16.4441C38.223 17.1401 39.043 17.4881 40.059 17.4881C40.523 17.4881 40.931 17.4241 41.283 17.2961C41.643 17.1681 41.963 17.0001 42.243 16.7921C42.531 16.5841 42.863 16.2441 43.239 15.7721L45.459 17.4521C44.883 18.2201 44.327 18.7921 43.791 19.1681C43.255 19.5361 42.667 19.8161 42.027 20.0081C41.387 20.2001 40.595 20.2961 39.651 20.2961Z" fill="currentColor"/>
+          <path d="M54.8312 20.2961C53.9832 20.2961 53.2112 20.1201 52.5152 19.7681C51.8272 19.4161 51.2672 18.9441 50.8352 18.3521H49.9232L50.7632 17.4641V19.8881H47.1752V2.7041H50.9312V8.8961H51.0032C51.4192 8.3521 51.9672 7.9201 52.6472 7.6001C53.3352 7.2801 54.0792 7.1201 54.8792 7.1201C56.5432 7.1201 57.9152 7.7201 58.9952 8.9201C60.0752 10.1121 60.6152 11.6921 60.6152 13.6601C60.6152 15.6041 60.0712 17.1961 58.9832 18.4361C57.8952 19.6761 56.5112 20.2961 54.8312 20.2961ZM53.9072 17.1521C54.7792 17.1521 55.5032 16.8321 56.0792 16.1921C56.6632 15.5441 56.9552 14.7121 56.9552 13.6961C56.9552 12.6801 56.6632 11.8561 56.0792 11.2241C55.4952 10.5921 54.7712 10.2761 53.9072 10.2761C53.0432 10.2761 52.3152 10.5921 51.7232 11.2241C51.1392 11.8561 50.8472 12.6801 50.8472 13.6961C50.8472 14.7121 51.1392 15.5441 51.7232 16.1921C52.3072 16.8321 53.0352 17.1521 53.9072 17.1521Z" fill="currentColor"/>
+          <path d="M65.6537 20.2961C64.3097 20.2961 63.2297 19.9321 62.4137 19.2041C61.6057 18.4681 61.2017 17.5081 61.2017 16.3241C61.2017 15.0441 61.6897 14.0361 62.6657 13.3001C63.6417 12.5641 64.9177 12.1961 66.4937 12.1961C67.1097 12.1961 67.6937 12.2561 68.2457 12.3761C68.8057 12.4961 69.2857 12.6521 69.6857 12.8441V12.1241C69.6857 11.4201 69.4457 10.8681 68.9657 10.4681C68.4857 10.0601 67.8297 9.8561 66.9977 9.8561C66.4937 9.8561 66.0657 9.9081 65.7137 10.0121C65.3617 10.0121 65.0217 10.2601 64.6937 10.4441C64.3657 10.6201 64.0777 10.8161 63.8297 11.0321C63.5897 11.2481 63.4697 11.3561 63.4697 11.3561L61.5977 9.3761C61.5977 9.3761 61.8137 9.2081 62.2457 8.8721C62.6777 8.5281 63.1457 8.2241 63.6497 7.9601C64.1617 7.6961 64.7297 7.4921 65.3537 7.3481C65.9857 7.1961 66.6697 7.1201 67.4057 7.1201C69.2777 7.1201 70.7257 7.5561 71.7497 8.4281C72.7817 9.3001 73.2977 10.5401 73.2977 12.1481V19.8881H69.6977V17.2841L70.5377 18.3641H69.6257C69.2657 18.9241 68.7337 19.3881 68.0297 19.7561C67.3337 20.1161 66.5417 20.2961 65.6537 20.2961ZM66.7937 17.8721C67.6417 17.8721 68.3337 17.5721 68.8697 16.9721C69.4137 16.3721 69.6857 15.5761 69.6857 14.5841V14.5721C69.3737 14.4041 69.0097 14.2681 68.5937 14.1641C68.1777 14.0601 67.7297 14.0081 67.2497 14.0081C66.4897 14.0081 65.8657 14.1761 65.3777 14.5121C64.8977 14.8401 64.6577 15.3441 64.6577 16.0241C64.6577 16.6081 64.8537 17.0641 65.2457 17.3921C65.6377 17.7121 66.1537 17.8721 66.7937 17.8721Z" fill="currentColor"/>
+          <path d="M75.3133 19.8881V7.5401H78.9133V9.8201L78.5413 9.3281H78.9853C79.3853 8.6401 79.9613 8.1001 80.7133 7.7081C81.4653 7.3161 82.2413 7.1201 83.0413 7.1201C84.4093 7.1201 85.4893 7.5361 86.2813 8.3681C87.0813 9.2001 87.4813 10.3201 87.4813 11.7281V19.8881H83.7253V12.6041C83.7253 11.8281 83.5333 11.2361 83.1493 10.8281C82.7733 10.4121 82.2213 10.2041 81.4933 10.2041C80.7973 10.2041 80.2173 10.4681 79.7533 10.9961C79.2973 11.5241 79.0693 12.1761 79.0693 12.9521V19.8881H75.3133Z" fill="currentColor"/>
+          <g transform="translate(4, 0)">
+            <rect x="91.4812" y="0.5" width="48" height="22" rx="4" stroke="currentColor"/>
+            <path d="M102.174 16.6347C100.876 16.6347 99.8682 16.2591 99.1495 15.5077C98.4309 14.7564 98.0715 13.7624 98.0715 12.5257V6.36572H100.291V12.5117C100.291 13.1744 100.452 13.6877 100.774 14.0517C101.1 14.4157 101.572 14.5977 102.188 14.5977C102.804 14.5977 103.275 14.4181 103.602 14.0587C103.928 13.6947 104.092 13.1791 104.092 12.5117V6.36572H106.269V12.5257C106.269 13.7811 105.898 14.7797 105.156 15.5217C104.418 16.2637 103.424 16.6347 102.174 16.6347Z" fill="currentColor"/>
+            <path d="M114.103 16.3897L111.205 11.9517L111.009 11.9447L107.306 6.36572H109.791L112.437 10.5307L112.696 10.5377L116.602 16.3897H114.103ZM107.159 16.3897L110.981 10.5447H111.219L113.928 6.36572H116.287L112.598 11.9587H112.409L109.511 16.3897H107.159Z" fill="currentColor"/>
+            <path d="M124.685 16.6347C123.388 16.6347 122.38 16.2591 121.661 15.5077C120.942 14.7564 120.583 13.7624 120.583 12.5257V6.36572H122.802V12.5117C122.802 13.1744 122.963 13.6877 123.285 14.0517C123.612 14.4157 124.083 14.5977 124.699 14.5977C125.315 14.5977 125.786 14.4181 126.113 14.0587C126.44 13.6947 126.603 13.1791 126.603 12.5117V6.36572H128.78V12.5257C128.78 13.7811 128.409 14.7797 127.667 15.5217C126.93 16.2637 125.936 16.6347 124.685 16.6347Z" fill="currentColor"/>
+            <path d="M130.644 16.3897V6.36572H132.891V16.3897H130.644Z" fill="currentColor"/>
+          </g>
+        </svg>
+      </a>
+      
+      <ul class="nav-links">
+        <li class="nav-item"><a href="../index.html#inicio">Inicio</a></li>
+        <li class="nav-item"><a href="../index.html#proyectos" class="active">Proyectos</a></li>
+        <li class="nav-item"><a href="../index.html#sobre-mi">Sobre mí</a></li>
+        <li class="nav-item"><a href="../index.html#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Cambiar modo de color">
+          <!-- Moon Icon (Visible in light mode) -->
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (Visible in dark mode) -->
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="../index.html#inicio">Inicio</a></li>
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="../assets/cv-esteban-cardenas.pdf" download target="_blank" rel="noopener" class="btn btn-fill" style="width: 100%;" id="mobile-cv-btn">
+        Descargar CV
+      </a>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="project-detail-hero">
+    <div class="container">
+      <span class="section-label">Design Systems / Escalabilidad</span>
+      <h1 class="project-detail-title">Evolución y Gobernanza de Sistema de Diseño</h1>
+      <p class="project-detail-subtitle">Construcción de una biblioteca de componentes modulares y tokens de diseño para alinear marca, diseño y desarrollo.</p>
+      
+      <div class="project-overview-grid">
+        <div class="overview-item">
+          <span class="overview-label">Mi Rol</span>
+          <span class="overview-val">Lead Product & Design Systems</span>
+        </div>
+        <div class="overview-item">
+          <span class="overview-label">Año</span>
+          <span class="overview-val">2024 - 2026 (Evolución de librería)</span>
+        </div>
+        <div class="overview-item">
+          <span class="overview-label">Duración</span>
+          <span class="overview-val">Evolución constante</span>
+        </div>
+        <div class="overview-item">
+          <span class="overview-label">Empresa</span>
+          <span class="overview-val">Skandia S.A.</span>
+        </div>
+        
+        <div class="overview-results-card">
+          <span class="overview-results-title">
+            <strong>Resultados clave del proyecto</strong>
+          </span>
+          <ul class="overview-results-list">
+            <li>Reducción significativa del tiempo de diseño y codificación de nuevas pantallas y prototipos.</li>
+            <li>Eliminación casi total de inconsistencias visuales en botones y formularios del Portal Empresarial.</li>
+            <li>Establecimiento de un canal de gobernanza unificado que sincroniza los cambios de Figma a código en minutos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contexto y Rol -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Contexto y Rol</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>Sistemas robustos para equipos ágiles</h3>
+          <p>
+            En organizaciones del tamaño de Skandia o Seguros Bolívar, múltiples células de producto desarrollan funcionalidades en paralelo. Sin una base de diseño unificada, cada equipo crea componentes ad-hoc, lo cual resulta en altos niveles de deuda técnica de front-end y experiencias de usuario fragmentadas y poco coherentes.
+          </p>
+          <p>
+            Como <strong>Product Designer enfocado en Sistemas de Diseño</strong>, lideré la evolución de la biblioteca de componentes y tokens en Skandia. Mi labor consistió en auditar la interfaz existente, crear el modelo de tokens semánticos (sincronizando Figma con variables CSS), redactar especificaciones de usabilidad y accesibilidad, y liderar el modelo de contribución técnica con los desarrolladores front-end.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema y Objetivos -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Problema & Objetivos</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>¿Por qué estructurar un sistema?</h3>
+          <p>
+            Antes de consolidar el sistema, identificamos varias brechas operativas en el flujo de diseño y desarrollo:
+          </p>
+          <ul>
+            <li><strong>Deuda visual extrema:</strong> Existían más de 12 variantes de botones con diferentes tonalidades de amarillo, bordes redondeados y fuentes en un mismo portal.</li>
+            <li><strong>Desperdicio de tiempo en handoff:</strong> Los desarrolladores debían codificar estilos desde cero para cada vista de Figma, en vez de reusar librerías globales.</li>
+            <li><strong>Falta de gobernanza:</strong> Si se requería un cambio en el color institucional, el equipo debía modificar manualmente decenas de archivos de código y mockups.</li>
+          </ul>
+          <h3 style="margin-top: var(--space-6);">Objetivos estratégicos</h3>
+          <ul>
+            <li>Establecer una fuente única de verdad (Single Source of Truth) para tokens visuales (color, tipografía, bordes, espaciado).</li>
+            <li>Estructurar componentes interactivos modulares y accesibles (WCAG 2.1) listos para producción.</li>
+            <li>Crear un modelo de gobernanza que permita a diseñadores y programadores proponer e iterar componentes del sistema.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restricciones -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Restricciones</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>La fricción del cambio tecnológico</h3>
+          <ul>
+            <li><strong>Multiplicidad de Stacks:</strong> Ciertos portales de la fiduciaria utilizan arquitecturas web tradicionales, mientras que los nuevos usan frameworks SPA. El sistema de diseño debía ser agnóstico a la tecnología, estructurándose mediante Tokens (variables CSS/JSON) reutilizables.</li>
+            <li><strong>Resistencia al cambio:</strong> Los equipos de desarrollo tenían cronogramas de entrega apretados, por lo que migrar a una nueva librería de diseño debía ocurrir de forma paulatina sin congelar el backlog.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Proceso</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>1. Auditoría Interfaz (Audit)</h3>
+          <p>
+            Realizamos una captura de todas las pantallas del ecosistema de Skandia. Agrupamos los elementos por categorías (Navbar, inputs, botones, banners). Demostramos cuantitativamente a la dirección que la falta de consistencia costaba dinero debido a la cantidad de horas que los devs gastaban corrigiendo estilos pixel-by-pixel.
+          </p>
+          
+          <h3 style="margin-top: var(--space-6);">2. Definición del Modelo de Tokens</h3>
+          <p>
+            Mapeamos los colores primitivos a roles semánticos. Por ejemplo, el color primitivo <code>Yellow 500 (#FFCC00)</code> se asignó al token semántico de acción <code>Semantic/Fill/Yellow</code>. Esto asegura que si el día de mañana se cambia el tono corporativo del amarillo, solo se modifica la declaración del token y se actualizan todos los componentes de diseño y código automáticamente.
+          </p>
+
+          <h3 style="margin-top: var(--space-6);">3. Handoff de Código y Documentación</h3>
+          <p>
+            En conjunto con el equipo de front-end, creamos especificaciones técnicas de animación, comportamientos hover y focus, y estructura HTML semántica para cada componente. Escribimos la documentación del sistema en Figma y Storybook para garantizar que tanto diseñadores como ingenieros contaran con el mismo vocabulario visual.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solución -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Solución</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>Un sistema de diseño modular y vivo</h3>
+          <p>
+            La solución no fue un documento PDF estático, sino una librería viva en Figma sincronizada con variables globales de CSS (como el UI Kit de este portafolio), facilitando el desarrollo rápido y coherente.
+          </p>
+          
+          <div class="mockup-gallery">
+            <!-- Mockup 1 -->
+            <div class="gallery-item">
+              <div class="gallery-placeholder">
+                Tokens de Color y Espaciado
+              </div>
+              <div class="gallery-caption">
+                <h4>Estructura de Tokens</h4>
+                <p>Configuración de variables de CSS para primitivos y semánticos basados en un ritmo de 4px.</p>
+              </div>
+            </div>
+            
+            <!-- Mockup 2 -->
+            <div class="gallery-item">
+              <div class="gallery-placeholder" style="background-color: var(--fill-grey-dark);">
+                Biblioteca de Componentes Figma/CSS
+              </div>
+              <div class="gallery-caption">
+                <h4>Librería de Botones e Inputs</h4>
+                <p>Estructuración de variantes (Default, Hover, Active, Disabled, Error) para componentes comunes.</p>
+              </div>
+            </div>
+            
+            <!-- Mockup 3 -->
+            <div class="gallery-item">
+              <div class="gallery-placeholder" style="background-image: linear-gradient(135deg, var(--fill-yellow) 0%, var(--fill-yellow-dark) 100%); color: var(--text-black);">
+                Storybook / Especificaciones front-end
+              </div>
+              <div class="gallery-caption">
+                <h4>Portal de Documentación</h4>
+                <p>Guía de uso visual y técnica para que los ingenieros integren componentes con facilidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resultados y Aprendizajes -->
+  <section class="case-body-section fade-in-section">
+    <div class="container">
+      <div class="case-grid-content">
+        <div class="case-section-sidebar">
+          <h2>Resultados & Lecciones</h2>
+        </div>
+        <div class="case-section-main">
+          <h3>Impacto y eficiencia operacional</h3>
+          <p>
+            La implementación del sistema de diseño impactó directamente la cultura de desarrollo de la empresa:
+          </p>
+          <ul>
+            <li><strong>Aceleración de entregas:</strong> Reducción en los tiempos de maquetación y diseño de interfaces en nuevos flujos.</li>
+            <li><strong>Alineación del equipo:</strong> Handoff libre de fricción técnica; el código entregado por los desarrolladores comenzó a coincidir perfectamente con los diseños de Figma.</li>
+            <li><strong>Facilidad de mantenimiento:</strong> Posibilidad de realizar rediseños visuales a gran escala en un par de días en lugar de meses.</li>
+          </ul>
+          
+          <h3 style="margin-top: var(--space-6);">Aprendizajes</h3>
+          <ul>
+            <li><strong>El sistema es un producto, no un proyecto:</strong> Un sistema de diseño requiere de mantenimiento y gobernanza constante. Si no se actualiza, la deuda de diseño vuelve a aparecer.</li>
+            <li><strong>La comunicación bidireccional es clave:</strong> El sistema de diseño no se impone; se co-crea. Las mejores sugerencias de mejora de componentes suelen provenir de los desarrolladores front-end.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>© 2026 Esteban Cárdenas · Product & UX/UI Designer en Bogotá, Colombia.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../assets/cv-esteban-cardenas.pdf" download target="_blank" rel="noopener" id="footer-cv">CV</a>
+          <a href="https://www.linkedin.com/in/esteban-ux-ui/" target="_blank" rel="noopener" class="social-circle-link linkedin" id="footer-li" aria-label="Linkedin">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.063.925 2.063 2.063 0 1.139-.92 2.065-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/573168772394" target="_blank" rel="noopener" class="social-circle-link whatsapp" id="footer-wa" aria-label="Whatsapp">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+          </a>
+          <a href="https://behance.net/esteban_ui" target="_blank" rel="noopener" class="social-circle-link behance" id="footer-be" aria-label="Behance">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

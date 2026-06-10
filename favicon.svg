@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    :root {
+      --color: #212529; /* Negro */
+      --bg: #FFCC00;    /* Amarillo */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color: #FFCC00; /* Amarillo */
+        --bg: #212529;    /* Negro */
+      }
+    }
+    .icon-bg { fill: var(--bg); transition: fill 0.3s ease; }
+    .icon-path { fill: var(--color); transition: fill 0.3s ease; }
+  </style>
+  <rect x="2" y="2" width="28" height="28" rx="8" class="icon-bg" />
+  <g transform="translate(10.468, 7.408)">
+    <path class="icon-path" d="M0 17.184V0H10.944V3.528H3.732V13.656H11.064V17.184H0ZM2.112 10.152V7.056H10.536V10.152H2.112Z" />
+  </g>
+</svg>
